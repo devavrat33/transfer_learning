@@ -1,69 +1,62 @@
-[2022-09-17 18:20:47,015: INFO: 01_base_model_creation]: 
+[2022-09-18 00:49:23,383: INFO: 02_transfer_learning]: 
 ********************
-[2022-09-17 18:20:47,015: INFO: 01_base_model_creation]: >>>>> stage creating base model started <<<<<
-[2022-09-17 18:20:47,015: ERROR: 01_base_model_creation]: 'Namespace' object has no attribute 'params'
-Traceback (most recent call last):
-  File "src/01_base_model_creation.py", line 36, in <module>
-    main(config_path=parsed_args.config, params_path=parsed_args.params)
-AttributeError: 'Namespace' object has no attribute 'params'
-[2022-09-17 18:21:11,592: INFO: 01_base_model_creation]: 
-********************
-[2022-09-17 18:21:11,593: INFO: 01_base_model_creation]: >>>>> stage creating base model started <<<<<
-[2022-09-17 18:21:11,593: ERROR: 01_base_model_creation]: main() missing 1 required positional argument: 'params_path'
-Traceback (most recent call last):
-  File "src/01_base_model_creation.py", line 36, in <module>
-    main(config_path=parsed_args.config)
-TypeError: main() missing 1 required positional argument: 'params_path'
-[2022-09-17 18:21:38,650: INFO: 01_base_model_creation]: 
-********************
-[2022-09-17 18:21:38,650: INFO: 01_base_model_creation]: >>>>> stage creating base model started <<<<<
-[2022-09-17 18:21:38,650: ERROR: 01_base_model_creation]: main() missing 1 required positional argument: 'params_path'
-Traceback (most recent call last):
-  File "src/01_base_model_creation.py", line 36, in <module>
-    main(config_path=parsed_args.config)
-TypeError: main() missing 1 required positional argument: 'params_path'
-[2022-09-17 18:23:16,905: INFO: 01_base_model_creation]: 
-********************
-[2022-09-17 18:23:16,905: INFO: 01_base_model_creation]: >>>>> stage creating base model started <<<<<
-[2022-09-17 18:23:16,906: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2022-09-17 18:23:17,468: ERROR: 01_base_model_creation]: 'Sequential' object has no attribute 'sumary'
-Traceback (most recent call last):
-  File "src/01_base_model_creation.py", line 77, in <module>
-    main(config_path=parsed_args.config)
-  File "src/01_base_model_creation.py", line 64, in main
-    model.sumary()
-AttributeError: 'Sequential' object has no attribute 'sumary'
-[2022-09-17 18:23:31,322: INFO: 01_base_model_creation]: 
-********************
-[2022-09-17 18:23:31,322: INFO: 01_base_model_creation]: >>>>> stage creating base model started <<<<<
-[2022-09-17 18:23:31,323: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2022-09-17 18:23:31,797: INFO: 01_base_model_creation]: >>>>> stage creating base model completed!<<<<<
+[2022-09-18 00:49:23,383: INFO: 02_transfer_learning]: >>>>> stage transfer learning started <<<<<
+[2022-09-18 00:49:23,383: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-18 00:49:23,883: INFO: 02_transfer_learning]: loaded_base_model_summary: 
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ flatten (Flatten)           (None, 784)               0         
+                                                                 
+ hidden_layer_1 (Dense)      (None, 300)               235500    
+                                                                 
+ leaky_re_lu (LeakyReLU)     (None, 300)               0         
+                                                                 
+ hidden_layer_2 (Dense)      (None, 100)               30100     
+                                                                 
+ leaky_re_lu_1 (LeakyReLU)   (None, 100)               0         
+                                                                 
+ output_layer (Dense)        (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 266,610
+Trainable params: 266,610
+Non-trainable params: 0
+_________________________________________________________________
 
-[2022-09-17 18:47:21,966: INFO: 01_base_model_creation]: 
-********************
-[2022-09-17 18:47:21,966: INFO: 01_base_model_creation]: >>>>> stage creating base model started <<<<<
-[2022-09-17 18:47:21,975: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2022-09-17 18:47:22,459: INFO: 01_base_model_creation]: >>>>> stage creating base model completed!<<<<<
+[2022-09-18 00:49:23,923: INFO: 02_transfer_learning]: transfer learning model summary; 
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ flatten (Flatten)           (None, 784)               0         
+                                                                 
+ hidden_layer_1 (Dense)      (None, 300)               235500    
+                                                                 
+ leaky_re_lu (LeakyReLU)     (None, 300)               0         
+                                                                 
+ hidden_layer_2 (Dense)      (None, 100)               30100     
+                                                                 
+ leaky_re_lu_1 (LeakyReLU)   (None, 100)               0         
+                                                                 
+ output_layer (Dense)        (None, 2)                 202       
+                                                                 
+=================================================================
+Total params: 265,802
+Trainable params: 202
+Non-trainable params: 265,600
+_________________________________________________________________
 
-[2022-09-17 18:47:53,005: INFO: 01_base_model_creation]: 
-********************
-[2022-09-17 18:47:53,005: INFO: 01_base_model_creation]: >>>>> stage creating base model started <<<<<
-[2022-09-17 18:47:53,005: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2022-09-17 18:47:53,465: INFO: 01_base_model_creation]: >>>>> stage creating base model completed!<<<<<
-
-[2022-09-17 18:49:38,733: INFO: 01_base_model_creation]: 
-********************
-[2022-09-17 18:49:38,733: INFO: 01_base_model_creation]: >>>>> stage creating base model started <<<<<
-[2022-09-17 18:49:38,733: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2022-09-17 18:49:39,619: WARNING: ag_logging]: AutoGraph could not transform <function Model.make_train_function.<locals>.train_function at 0x00000276FB759948> and will run it as-is.
+[2022-09-18 00:49:24,063: WARNING: ag_logging]: AutoGraph could not transform <function Model.make_train_function.<locals>.train_function at 0x00000211AFBC7DC8> and will run it as-is.
 Please report this to the TensorFlow team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output.
 Cause: 'arguments' object has no attribute 'posonlyargs'
 To silence this warning, decorate the function with @tf.autograph.experimental.do_not_convert
-[2022-09-17 18:49:43,132: WARNING: ag_logging]: AutoGraph could not transform <function Model.make_test_function.<locals>.test_function at 0x00000276FCA16DC8> and will run it as-is.
+[2022-09-18 00:49:26,733: WARNING: ag_logging]: AutoGraph could not transform <function Model.make_test_function.<locals>.test_function at 0x00000211B0D569D8> and will run it as-is.
 Please report this to the TensorFlow team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output.
 Cause: 'arguments' object has no attribute 'posonlyargs'
 To silence this warning, decorate the function with @tf.autograph.experimental.do_not_convert
-[2022-09-17 18:50:20,088: INFO: common]: created directory at: artifacts\models
-[2022-09-17 18:50:20,120: INFO: 01_base_model_creation]: base model is saved at artifacts\models\base_model.h5
-[2022-09-17 18:50:20,168: INFO: 01_base_model_creation]: >>>>> stage creating base model completed!<<<<<
+[2022-09-18 00:49:51,848: INFO: 02_transfer_learning]: new model is saved at artifacts\models\even_odd_transfer_model.h5
+[2022-09-18 00:49:52,593: INFO: 02_transfer_learning]: evaluation_metrics [0.2912580966949463, 0.8795999884605408]
+[2022-09-18 00:49:52,644: INFO: 02_transfer_learning]: >>>>> stage transfer learning completed!<<<<<
 

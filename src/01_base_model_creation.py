@@ -6,6 +6,7 @@ import logging
 from utils.common import read_yaml, create_directories
 import random
 import tensorflow as tf
+import io
 
 
 STAGE = "creating base model" ## <<< change stage name 
@@ -21,6 +22,12 @@ logging.basicConfig(
 def main(config_path):
     ## read config files
     config = read_yaml(config_path)
+
+    def _log_model_summary(model):
+        with io.StringIO() as stream:
+            model.summary(print_fn = lambda x: stream.write(f'{x}\n'))
+            summary_str = stream.getvalue()
+        return summary_str
 
      # get the data
     (X_train_full, y_train_full), (X_test, y_test) = tf.keras.datasets.mnist.load_data()
@@ -62,7 +69,7 @@ def main(config_path):
     model.compile(loss= LOSS, optimizer = OPTIMIZER, metrics= METRICS)
 
     model.summary() 
-
+    logging.info(f'{STAGE} model summary; \n{_log_model_summary(model)}')
     #  train the model
     history = model.fit(X_train, y_train, epochs=10,
              validation_data=(X_valid, y_valid), verbose=2)
